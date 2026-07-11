@@ -1,7 +1,7 @@
 local opt = vim.opt
 
 -- Ensure dotnet tools (csharpier, etc.) are on PATH regardless of shell profile
-local dotnet_tools = "/home/vsanda/.dotnet/tools"
+local dotnet_tools = vim.env.HOME .. "/.dotnet/tools"
 if not vim.env.PATH:find(dotnet_tools, 1, true) then
     vim.env.PATH = dotnet_tools .. ":" .. vim.env.PATH
 end
